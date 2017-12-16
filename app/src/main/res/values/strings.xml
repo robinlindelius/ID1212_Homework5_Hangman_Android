@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">Hangman</string>
+    <string name="welcome_text">Welcome to Hangman!</string>
+
+    <string name="btn_start_game">START</string>
+    <string name="btn_new_game">NEW GAME</string>
+    <string name="btn_quit">QUIT</string>
+    <string name="btn_guess">GUESS</string>
+
+    <string name="hint_guess">Guess...</string>
+
+    <string name="no_internetConnection">No internet connection. Connect to internet and try again.</string>
+    <string name="no_internet">No internet</string>
+    <string name="no_serverConnection">Unable to connect to server. Please try again.</string>
+    <string name="no_connection">No connection</string>
+
+    <string name="rules">RULES</string>
+    <string name="gameRules">
+        Welcome to Hangman! The rules are simple, a random word will be chosen
+        and your job is to find out which before you get hanged. The task may
+        be simple but the stakes are high! You will be presented with a word
+        represented by one _ for every letter in the word, you will have one
+        guess per letter in the word before you get hanged. So if the word is
+        three letters long, you only have three guesses! If a letter reoccurs
+        in a word you'll get all of them in one guess, and remember that you
+        can guess the entire word at any time!
+        Instructions:
+        Start a game by using the START command
+        Make a guess using the GUESS command followed by your guess
+        Quit the game using the QUIT command
+    </string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
