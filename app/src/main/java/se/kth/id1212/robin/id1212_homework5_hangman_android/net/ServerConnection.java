@@ -54,10 +54,6 @@ public class ServerConnection implements Serializable {
         sendMessageToServer(MessageType.START.toString());
     }
 
-    public void getRules() {
-        sendMessageToServer(MessageType.RULES.toString());
-    }
-
 
     private void sendMessageToServer(String... strings) {
         StringJoiner joiner = new StringJoiner(Constants.MESSAGE_DELIMITER);

@@ -8,6 +8,5 @@ public enum MessageType {
     START,
     GUESS,
     DISCONNECT,
-    GAME,
-    RULES
+    GAME
 }
