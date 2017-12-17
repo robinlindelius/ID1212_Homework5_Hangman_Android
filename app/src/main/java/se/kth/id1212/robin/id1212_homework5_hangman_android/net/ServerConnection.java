@@ -39,14 +39,14 @@ public class ServerConnection implements Serializable {
         new Thread(new Listener(outputHandler)).start();
     }
 
-    public void disconnect() throws IOException{
+    public void disconnect() throws IOException {
         sendMessageToServer(MessageType.DISCONNECT.toString());
         socket.close();
         socket = null;
         connected = false;
     }
 
-    public void sendGuess(String guess) {
+    public void sendGuess(String guess){
         sendMessageToServer(MessageType.GUESS.toString(), guess);
     }
 
@@ -54,13 +54,10 @@ public class ServerConnection implements Serializable {
         sendMessageToServer(MessageType.START.toString());
     }
 
-    public boolean isConnected() {
-        return connected;
-    }
-
     public void getRules() {
         sendMessageToServer(MessageType.RULES.toString());
     }
+
 
     private void sendMessageToServer(String... strings) {
         StringJoiner joiner = new StringJoiner(Constants.MESSAGE_DELIMITER);
@@ -69,9 +66,12 @@ public class ServerConnection implements Serializable {
         }
         toServer.println(joiner.toString());
     }
+
+
     private class Listener implements Runnable{
 
         private final OutputHandler outputHandler;
+
         public Listener(OutputHandler outputHandler) {
             this.outputHandler = outputHandler;
         }
@@ -81,9 +81,9 @@ public class ServerConnection implements Serializable {
             try{
                 while(true) {
                     outputHandler.handleOutput(parseServerMessage(fromServer.readLine()));
+
                 }
-            }
-            catch (Throwable connectionFailure) {
+            } catch (Throwable connectionFailure) {
                 if (connected) {
                     outputHandler.handleOutput("Lost connection.");
                 }
